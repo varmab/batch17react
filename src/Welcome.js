@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+
 
 class Welcome extends Component{
     constructor(){
@@ -17,9 +19,15 @@ class Welcome extends Component{
 
     render(){
         return(
-            <h1 onClick={this.updateClicks}>Welcome to { this.props.title } ({this.state.clicks})</h1>
+            <h1 onClick={this.updateClicks}>Welcome to { this.props.title } ({this.state.clicks}) - {this.props.year}</h1>
         )
     }
 }
+
+Welcome.propTypes={
+    title:PropTypes.string
+}
+
+
 
 export default Welcome;
